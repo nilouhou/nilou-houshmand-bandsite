@@ -2,3 +2,17 @@
 *.css.map
 *.sass.map
 *.scss.map
+*.css.map
+
+# Ignore system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+*[Tt]humbs.db
+*.Trashes
+
+# Editor files
+.vscode/*
