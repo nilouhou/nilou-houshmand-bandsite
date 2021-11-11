@@ -1,0 +1,132 @@
+/** Global StyleSheet **/
+
+@use "variables" as *;
+@use "mixins";
+@use "typography";
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Type Kit */
+h1,
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+/* Gap, General padding and margin */
+.main,
+.footer {
+  padding: 0 1rem;
+}
+
+/* Header Section */
+.header {
+  background-color: $bandSite-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mixins.tablet {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  &__logo {
+    max-height: 1.25rem;
+    max-width: 7.5rem;
+    margin: 1rem;
+
+    @include mixins.desktop {
+      margin: 1.5rem 2.5rem;
+    }
+  }
+}
+
+/* Main Navigation */
+.main-nav {
+  width: 100vw;
+  text-align: center;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    flex: 1;
+
+    @include mixins.tablet {
+      flex: 0;
+      margin: 0 1rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+
+    @include mixins.tablet {
+      padding: 1rem 0;
+    }
+  }
+
+  &__link,
+  &__link:visited {
+    color: $bandSite-mercury;
+  }
+
+  &__link {
+    border-bottom: 3px solid transparent;
+  }
+
+  &__link:hover,
+  &__link.main-nav__link--active {
+    color: $bandSite-white;
+    border-color: $bandSite-white;
+  }
+
+  &__link.main-nav__link--active {
+    font-weight: 700;
+  }
+}
