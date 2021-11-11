@@ -1,4 +1,4 @@
-/** Global StyleSheet **/
+/** Global StyleSheet: Reset, Typography, Gap, Header, Navigation, Footer **/
 
 @use "variables" as *;
 @use "mixins";
@@ -15,9 +15,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
+  @include mixins.body-mobile;
+  @include mixins.tablet {
+    @include mixins.body-desktop;
+  }
 }
 
 h1,
@@ -31,24 +32,27 @@ a {
   text-decoration: none;
 }
 
-/* Type Kit */
+/* Typography */
 h1,
 h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
+  @include mixins.page-header-mobile;
+  @include mixins.tablet {
+    @include mixins.page-header-tablet;
+  }
 }
 
 h3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 600;
+  @include mixins.sub-header-mobile;
+  @include mixins.tablet {
+    @include mixins.sub-header-tablet;
+  }
 }
 
 .small {
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 700;
+  @include mixins.small-mobile;
+  @include mixins.tablet {
+    @include mixins.small-tablet;
+  }
 }
 
 /* Gap, General padding and margin */
@@ -60,12 +64,11 @@ h3 {
 /* Header Section */
 .header {
   background-color: $bandSite-black;
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column;
   align-items: center;
 
   @include mixins.tablet {
-    flex-direction: row;
+    @include mixins.flex-row;
     align-items: flex-end;
   }
 

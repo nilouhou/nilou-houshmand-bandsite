@@ -1,8 +1,11 @@
 /* Bandsite Colours */
 /* Primary Colours */
 /* Secondary Colours */
-/* Mixins */
-/* Responsive mixin */
+/** Mixins : Flex, Font Size, Media Query **/
+/* Flex mixins*/
+/* Font size  Mobile mixins */
+/* Font size  Tablet and Desktop mixins */
+/* Responsive mixins */
 /* Fonts */
 /** Regular **/
 @font-face {
@@ -25,7 +28,7 @@
   font-weight: 700;
   font-style: normal;
 }
-/** Global StyleSheet **/
+/** Global StyleSheet: Reset, Typography, Gap, Header, Navigation, Footer **/
 /* Reset */
 *,
 *::before,
@@ -41,6 +44,13 @@ body {
   line-height: 1.125rem;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+}
 
 h1,
 h2,
@@ -53,12 +63,20 @@ a {
   text-decoration: none;
 }
 
-/* Type Kit */
+/* Typography */
 h1,
 h2 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1,
+h2 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+  }
 }
 
 h3 {
