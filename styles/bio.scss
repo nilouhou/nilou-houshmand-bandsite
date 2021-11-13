@@ -24,6 +24,18 @@
 
 /* Main Content*/
 .main-content {
+  padding-bottom: $mobile-gap-component;
+  @include mixins.tablet {
+    padding-bottom: $tablet-gap-component;
+  }
+  // Bio Section image and paragraphs
+  &__bio {
+    @include mixins.tablet {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+
   &__img {
     width: 100%;
     margin: $mobile-gap 0;
@@ -69,4 +81,27 @@
       }
     }
   }
+}
+
+/* Gallery */
+.gallery {
+  background-color: $bandSite-mercury;
+  padding-bottom: $mobile-gap-component;
+  @include mixins.tablet {
+    padding-bottom: $tablet-gap-component;
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      width: 33%;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: $bandSite-black;
 }
