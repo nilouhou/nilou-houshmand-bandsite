@@ -26,5 +26,47 @@
 .main-content {
   &__img {
     width: 100%;
+    margin: $mobile-gap 0;
+  }
+
+  &__quote,
+  &__author {
+    @include mixins.sub-header-mobile;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__quote {
+    @include mixins.tablet {
+      @include mixins.sub-header-tablet;
+      padding: 0;
+    }
+
+    @include mixins.desktop {
+      max-width: 80%;
+    }
+  }
+
+  &__author {
+    @include mixins.tablet {
+      @include mixins.small-tablet;
+    }
+  }
+
+  //Main Content main 2 rows/coloumn of Praragraph Section
+  &__paragraphs {
+    @include mixins.tablet {
+      display: flex;
+    }
+    p:last-child {
+      @include mixins.mobile {
+        margin-top: $mobile-gap;
+      }
+
+      @include mixins.tablet {
+        margin-top: 0;
+        margin-left: $tablet-gap-inside;
+      }
+    }
   }
 }

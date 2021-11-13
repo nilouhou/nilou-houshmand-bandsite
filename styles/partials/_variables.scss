@@ -18,8 +18,9 @@ $mobile-gap: 1rem;
 $tablet-gap-outside: 2.25rem;
 $desktop-gap-outside: 5rem;
 
-$tablet-gap-inside: 0.75rem; // total 24px   gap | Element | gap  gap | Element | gap
-$desktop-gap-inside: 0.75rem;
+$tablet-gap-inside: 1.5rem; // total gap between two elements
+$tablet-half-gap-inside: 0.75rem; // total 24px   gap | Element | gap  gap | Element | gap
+$desktop-half-gap-inside: 0.75rem;
 
 $mobile-gap-component: 1rem;
 $tablet-gap-component: 2.25rem;
