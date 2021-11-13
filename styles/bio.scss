@@ -85,7 +85,7 @@
 
 /* Gallery */
 .gallery {
-  background-color: $bandSite-mercury;
+  background-color: $bandSite-alabaster;
   padding-bottom: $mobile-gap-component;
   @include mixins.tablet {
     padding-bottom: $tablet-gap-component;
@@ -104,4 +104,5 @@
 /* Footer */
 .footer {
   background-color: $bandSite-black;
+  color: $bandSite-white;
 }

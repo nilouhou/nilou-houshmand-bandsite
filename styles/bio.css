@@ -223,6 +223,27 @@ h3 {
   font-weight: 700;
 }
 
+/****** Footer Component *****/
+.footer__socials a:nth-child(2n+2) {
+  margin: 0 1rem;
+}
+.footer__info-list-wrapper {
+  margin: 1.5rem 0 2rem;
+}
+.footer__management-list {
+  margin: 1rem 0;
+}
+.footer__management-list a {
+  color: #ffffff;
+}
+.footer__management-list:nth-child(3n+1) {
+  font-weight: 600;
+}
+
+.copy-right {
+  padding: 1rem 0;
+}
+
 /* Bio Page Stylesheet */
 /* Hero Section */
 .hero {
@@ -310,7 +331,7 @@ h3 {
 
 /* Gallery */
 .gallery {
-  background-color: #e1e1e1;
+  background-color: #fafafa;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
@@ -329,4 +350,5 @@ h3 {
 /* Footer */
 .footer {
   background-color: #323232;
+  color: #ffffff;
 }/*# sourceMappingURL=bio.css.map */

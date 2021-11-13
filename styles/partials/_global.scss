@@ -154,3 +154,31 @@ h3 {
     font-weight: 700;
   }
 }
+
+/****** Footer Component *****/
+.footer {
+  &__socials {
+    a:nth-child(2n + 2) {
+      margin: 0 $mobile-gap;
+    }
+  }
+  &__info-list-wrapper {
+    margin: 1.5rem 0 2rem;
+  }
+  &__management-list {
+    margin: $mobile-gap 0;
+
+    a {
+      color: $bandSite-white;
+    }
+  }
+
+  //Selecting the First top Paragraph of each coloumn
+  &__management-list:nth-child(3n + 1) {
+    font-weight: 600;
+  }
+}
+
+.copy-right {
+  padding: $mobile-gap 0;
+}
