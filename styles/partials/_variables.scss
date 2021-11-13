@@ -1,4 +1,6 @@
-/* Bandsite Colours */
+/** Variables   ==============
+    Colours, Gap 
+=============================**/
 
 /* Primary Colours */
 $bandSite-black: #323232;
@@ -9,3 +11,15 @@ $bandSite-white: #ffffff;
 $bandSite-darkBlack: #000000;
 $bandSite-mercury: #e1e1e1;
 $bandSite-alabaster: #fafafa;
+
+/* Gap */
+$mobile-gap: 1rem;
+
+$tablet-gap-outside: 2.25rem;
+$desktop-gap-outside: 5rem;
+
+$tablet-gap-inside: 0.75rem; // total 24px   gap | Element | gap  gap | Element | gap
+$desktop-gap-inside: 0.75rem;
+
+$mobile-gap-component: 1rem;
+$tablet-gap-component: 2.25rem;

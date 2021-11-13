@@ -1,4 +1,6 @@
-/** Global StyleSheet: Reset, Typography, Gap, Header, Navigation, Footer **/
+/** Global StyleSheet =============================
+ Reset, Typography, Gap, Header, Navigation, Footer
+ ============================================== **/
 
 @use "variables" as *;
 @use "mixins";
@@ -17,7 +19,7 @@ body {
   font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
   @include mixins.body-mobile;
   @include mixins.tablet {
-    @include mixins.body-desktop;
+    @include mixins.body-tablet;
   }
 }
 
@@ -36,8 +38,16 @@ a {
 h1,
 h2 {
   @include mixins.page-header-mobile;
+}
+
+h1 {
   @include mixins.tablet {
     @include mixins.page-header-tablet;
+  }
+}
+h2 {
+  @include mixins.tablet {
+    @include mixins.section-header-tablet;
   }
 }
 
@@ -54,11 +64,19 @@ h3 {
     @include mixins.small-tablet;
   }
 }
-
-/* Gap, General padding and margin */
-.main,
+/* GAP */
+.header,
+.hero,
+.main-content,
 .footer {
-  padding: 0 1rem;
+  padding: 0 $mobile-gap;
+
+  @include mixins.tablet {
+    padding: 0 $tablet-gap-outside;
+  }
+  @include mixins.desktop {
+    padding: 0 $desktop-gap-outside;
+  }
 }
 
 /* Header Section */
@@ -75,10 +93,11 @@ h3 {
   &__logo {
     max-height: 1.25rem;
     max-width: 7.5rem;
-    margin: 1rem;
+    margin: $mobile-gap;
+    margin-left: 0;
 
     @include mixins.desktop {
-      margin: 1.5rem 2.5rem;
+      margin: 1.5rem 2.5rem 1.5rem 0;
     }
   }
 }

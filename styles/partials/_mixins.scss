@@ -1,4 +1,6 @@
-/** Mixins : Flex, Font Size, Media Query **/
+/** Mixins====================
+ Flex, Font Size, Media Query 
+ =============================**/
 
 /* Flex mixins*/
 @mixin flex-column {
@@ -9,6 +11,22 @@
 @mixin flex-row {
   display: flex;
   flex-direction: row;
+}
+
+@mixin flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row-x-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-row-y-center {
+  display: flex;
+  align-items: center;
 }
 
 /* Font size  Mobile mixins */
