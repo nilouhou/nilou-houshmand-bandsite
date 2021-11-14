@@ -15,7 +15,7 @@
   background-position: right center;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  color: $bandSite-white;
+  color: $primary-light;
 
   @include mixins.tablet {
     height: 80vh;
@@ -85,7 +85,7 @@
 
 /* Gallery */
 .gallery {
-  background-color: $bandSite-alabaster;
+  background-color: $secondary-light;
   padding-bottom: $mobile-gap-component;
   @include mixins.tablet {
     padding-bottom: $tablet-gap-component;
