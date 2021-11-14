@@ -157,10 +157,11 @@ h3 {
 
 /****** Footer Component *****/
 .footer {
+  background-color: $bandSite-black;
+  color: $bandSite-white;
+
   &__content {
-    margin-bottom: 5rem;
     @include mixins.tablet {
-      width: 70%;
       margin-bottom: 1rem;
     }
   }
@@ -170,6 +171,11 @@ h3 {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      flex-wrap: wrap;
+      flex-direction: column;
+      @include mixins.tablet {
+        flex-direction: row;
+      }
     }
   }
 
@@ -188,13 +194,23 @@ h3 {
     @include mixins.tablet {
       margin-left: $tablet-gap-inside;
     }
+    @include mixins.desktop {
+      margin-left: $desktop-gap-outside;
+    }
   }
 
   &__info-list-wrapper {
+    margin-bottom: 5rem;
     @include mixins.tablet {
+      margin-bottom: 0;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      order: 2;
+    }
+    @include mixins.desktop {
+      width: 70%;
     }
   }
 
