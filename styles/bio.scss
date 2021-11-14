@@ -92,11 +92,19 @@
   }
 
   &__images {
-    display: flex;
-    flex-wrap: wrap;
-
+    @include mixins.tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
     img {
-      width: 33%;
+      width: 100%;
+      display: block;
+      padding-bottom: $mobile-gap;
+      @include mixins.tablet {
+        width: calc(30% - 0.75rem);
+        margin: $tablet-half-gap-inside;
+        padding-bottom: 0;
+      }
     }
   }
 }

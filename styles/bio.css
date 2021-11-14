@@ -394,10 +394,21 @@ h3 {
     padding-bottom: 2.25rem;
   }
 }
-.gallery__images {
-  display: flex;
-  flex-wrap: wrap;
+@media (min-width: 768px) {
+  .gallery__images {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 .gallery__images img {
-  width: 33%;
+  width: 100%;
+  display: block;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .gallery__images img {
+    width: calc(30% - 0.75rem);
+    margin: 0.75rem;
+    padding-bottom: 0;
+  }
 }/*# sourceMappingURL=bio.css.map */
