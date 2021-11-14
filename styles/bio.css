@@ -7,7 +7,7 @@
 /** Mixins====================
  Flex, Font Size, Media Query 
  =============================**/
-/* Flex mixins*/
+/* Flex mixins */
 /* Font size  Mobile mixins */
 /* Font size  Tablet and Desktop mixins */
 /* Responsive mixins */
@@ -407,8 +407,11 @@ h3 {
 }
 @media (min-width: 768px) {
   .gallery__images img {
-    width: calc(30% - 0.75rem);
-    margin: 0.75rem;
+    width: calc((100% - 3rem) / 3);
+    margin: 0.75rem 0;
     padding-bottom: 0;
+  }
+  .gallery__images img:nth-child(3n+2) {
+    margin: 0.75rem 1.5rem;
   }
 }/*# sourceMappingURL=bio.css.map */
