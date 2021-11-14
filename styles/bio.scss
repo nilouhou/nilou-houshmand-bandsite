@@ -102,6 +102,7 @@
       padding-bottom: $mobile-gap;
 
       @include mixins.tablet {
+        //3rem = 2 * $tablet-gap-inside
         width: calc((100% - 3rem) / 3);
         // Selecting only the middle cloumn of image gallery
         &:nth-child(3n + 2) {
