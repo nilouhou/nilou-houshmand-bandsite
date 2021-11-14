@@ -100,13 +100,23 @@
       width: 100%;
       display: block;
       padding-bottom: $mobile-gap;
+
       @include mixins.tablet {
         width: calc((100% - 3rem) / 3);
+        // Selecting only the middle cloumn of image gallery
         &:nth-child(3n + 2) {
           margin: $tablet-half-gap-inside $tablet-gap-inside;
         }
         margin: $tablet-half-gap-inside 0;
         padding-bottom: 0;
+
+        // Hovering and Filtering Effext on tablet and desktop
+        filter: grayscale(1);
+        transition: 0.5s ease-in;
+        &:hover {
+          filter: grayscale(0);
+          cursor: pointer;
+        }
       }
     }
   }

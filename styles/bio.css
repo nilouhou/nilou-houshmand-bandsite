@@ -410,8 +410,14 @@ h3 {
     width: calc((100% - 3rem) / 3);
     margin: 0.75rem 0;
     padding-bottom: 0;
+    filter: grayscale(1);
+    transition: 0.5s ease-in;
   }
   .gallery__images img:nth-child(3n+2) {
     margin: 0.75rem 1.5rem;
+  }
+  .gallery__images img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
   }
 }/*# sourceMappingURL=bio.css.map */
