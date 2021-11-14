@@ -157,25 +157,59 @@ h3 {
 
 /****** Footer Component *****/
 .footer {
+  &__content {
+    margin-bottom: 5rem;
+    @include mixins.tablet {
+      width: 70%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__flex-wrapper {
+    @include mixins.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  &__social-wrapper {
+    @include mixins.tablet {
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+    }
+  }
+
   &__socials {
     a:nth-child(2n + 2) {
       margin: 0 $mobile-gap;
     }
+    @include mixins.tablet {
+      margin-left: $tablet-gap-inside;
+    }
   }
+
   &__info-list-wrapper {
-    margin: 1.5rem 0 2rem;
+    @include mixins.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
+
   &__management-list {
-    margin: $mobile-gap 0;
+    p {
+      margin: $mobile-gap 0;
+      //Selecting the First Pragraph of each Coloumn
+      &:first-child {
+        font-weight: 600;
+      }
+    }
 
     a {
       color: $bandSite-white;
     }
-  }
-
-  //Selecting the First top Paragraph of each coloumn
-  &__management-list:nth-child(3n + 1) {
-    font-weight: 600;
   }
 }
 
