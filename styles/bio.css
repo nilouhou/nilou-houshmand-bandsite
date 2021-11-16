@@ -131,6 +131,7 @@ h3 {
 .hero,
 .main-content,
 .gallery,
+.conversation,
 .footer {
   padding: 0 1rem;
 }
@@ -139,6 +140,7 @@ h3 {
 .hero,
 .main-content,
 .gallery,
+.conversation,
 .footer {
     padding: 0 2.25rem;
   }
@@ -148,6 +150,7 @@ h3 {
 .hero,
 .main-content,
 .gallery,
+.conversation,
 .footer {
     padding: 0 5rem;
   }
