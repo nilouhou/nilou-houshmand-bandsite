@@ -99,30 +99,41 @@
         <h2 class="section-header">Join the Conversation</h2>
         <!-- Form Container -->
         <div class="conversation__form-wrapper">
-          <div class="convsertaion__avatar">
+          <div class="commets__avatar">
             <img src="assets/images/Mohan-muruge.jpg" alt="mohan-muruge" />
           </div>
-          <div class="conversation__form">
-            <form action="" class="form">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
-              <label for="comment">Comment</label>
-              <textarea
-                name="comment"
-                id="comment"
-                cols="30"
-                rows="10"
-              ></textarea>
-              <button type="submit">Comment</button>
-            </form>
-          </div>
+
+          <form class="form">
+            <label class="form__label" for="name">Name</label>
+            <input
+              class="form__input-text"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              aria-placeholder="Enter your name"
+            />
+            <label class="form__label" for="comment">Comment</label>
+            <textarea
+              class="form__textarea"
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="10"
+              placeholder="Add a new comment"
+              aria-placeholder="Add a new comment"
+            ></textarea>
+            <div class="form__button-wrapper">
+              <button class="primary-button" type="submit">Comment</button>
+            </div>
+          </form>
         </div>
 
         <!--Comment Area-->
         <div class="comments__list">
           <!--Comment body-->
           <div class="comments__item">
-            <div class="commets__avatar"><img src="" alt="" /></div>
+            <div class="commets__avatar"></div>
             <div class="comments__message">
               <p class="comments__name">
                 Connor Walton
@@ -138,7 +149,7 @@
           </div>
 
           <div class="comments__item">
-            <div class="commets__avatar"><img src="" alt="" /></div>
+            <div class="commets__avatar"></div>
             <div class="comments__message">
               <p class="comments__name">
                 Emilie Beach
@@ -153,7 +164,7 @@
           </div>
 
           <div class="comments__item">
-            <div class="commets__avatar"><img src="" alt="" /></div>
+            <div class="commets__avatar"></div>
             <div class="comments__message">
               <p class="comments__name">
                 Miles Acosta

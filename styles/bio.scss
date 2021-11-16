@@ -122,3 +122,29 @@
     }
   }
 }
+
+/* Conversation Section */
+.conversation {
+  &__form-wrapper {
+    @include mixins.flex-row-x-center;
+  }
+}
+
+/** Conversation Comments **/
+.commets {
+  &__avatar {
+    margin: 1.25rem 1rem 0 0;
+  }
+  &__avatar,
+  &__avatar img {
+    border-radius: 50%;
+    background-color: $secondary-medium;
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    @include mixins.tablet {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}

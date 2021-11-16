@@ -1,6 +1,6 @@
-/** Global StyleSheet =============================
- Reset, Typography, Gap, Header, Navigation, Footer
- ============================================== **/
+/** Global StyleSheet =========================================
+ Reset, Typography, Gap, Header, Navigation, Form,Button, Footer
+ =========================================================== **/
 
 @use "variables" as *;
 @use "mixins";
@@ -153,6 +153,67 @@ h3 {
 
   &__link.main-nav__link--active {
     font-weight: 700;
+  }
+}
+
+/* Form */
+.form {
+  font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
+  &__label {
+    display: block;
+    @include mixins.small-mobile;
+    //margin-bottom: 4px;
+    color: $primary-medium;
+  }
+
+  &__input-text,
+  &__textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.75rem;
+    min-height: 2.25rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid $secondary-medium;
+    margin-bottom: 4px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $primary-dark;
+    }
+    @include mixins.tablet {
+      padding: 1rem;
+      min-height: 3rem;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Button */
+.primary-button {
+  background-color: $primary-dark;
+  color: $primary-light;
+  border-radius: 4px;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-dark;
+  }
+
+  @include mixins.tablet {
+    max-width: 9.375rem;
+    padding: 0 2rem;
   }
 }
 
