@@ -229,6 +229,7 @@ h3 {
 /* Form */
 .form {
   font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
+  width: 100%;
 }
 .form__label {
   display: block;
@@ -485,16 +486,57 @@ h3 {
 }
 
 /* Conversation Section */
+.conversation {
+  margin-bottom: 1rem;
+}
+.conversation__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .conversation__form-wrapper {
   display: flex;
   justify-content: center;
 }
+@media (min-width: 768px) {
+  .conversation__form-wrapper {
+    width: 80%;
+  }
+}
+@media (min-width: 1280px) {
+  .conversation__form-wrapper {
+    width: 50%;
+  }
+}
 
 /** Conversation Comments **/
-.commets__avatar {
+.comments {
+  margin-top: 1rem;
+  /*Comment avatar*/
+  /* Comment text */
+}
+@media (min-width: 768px) {
+  .comments {
+    width: 80%;
+  }
+}
+@media (min-width: 1280px) {
+  .comments {
+    width: 50%;
+  }
+}
+.comments__item {
+  display: flex;
+  border-top: 1px solid #e1e1e1;
+  padding: 1rem 0;
+}
+.comments__item:last-child {
+  border-bottom: 1px solid #e1e1e1;
+}
+.comments__avatar {
   margin: 1.25rem 1rem 0 0;
 }
-.commets__avatar, .commets__avatar img {
+.comments__avatar, .comments__avatar img {
   border-radius: 50%;
   background-color: #e1e1e1;
   width: 2.25rem;
@@ -503,8 +545,11 @@ h3 {
      object-fit: cover;
 }
 @media (min-width: 768px) {
-  .commets__avatar, .commets__avatar img {
+  .comments__avatar, .comments__avatar img {
     width: 3rem;
     height: 3rem;
   }
+}
+.comments__message {
+  flex: 1;
 }/*# sourceMappingURL=bio.css.map */

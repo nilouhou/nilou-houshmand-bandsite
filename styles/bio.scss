@@ -125,13 +125,43 @@
 
 /* Conversation Section */
 .conversation {
+  margin-bottom: $mobile-gap-component;
+
+  &__wrapper {
+    @include mixins.flex-row-y-center;
+    flex-direction: column;
+  }
   &__form-wrapper {
     @include mixins.flex-row-x-center;
+    @include mixins.tablet {
+      width: 80%;
+    }
+    @include mixins.desktop {
+      width: 50%;
+    }
   }
 }
 
 /** Conversation Comments **/
-.commets {
+.comments {
+  @include mixins.tablet {
+    width: 80%;
+  }
+  @include mixins.desktop {
+    width: 50%;
+  }
+  margin-top: $mobile-gap-component;
+
+  &__item {
+    display: flex;
+    border-top: 1px solid $secondary-medium;
+    padding: $mobile-gap 0;
+
+    &:last-child {
+      border-bottom: 1px solid $secondary-medium;
+    }
+  }
+  /*Comment avatar*/
   &__avatar {
     margin: 1.25rem 1rem 0 0;
   }
@@ -146,5 +176,10 @@
       width: 3rem;
       height: 3rem;
     }
+  }
+
+  /* Comment text */
+  &__message {
+    flex: 1;
   }
 }

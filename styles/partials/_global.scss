@@ -159,6 +159,7 @@ h3 {
 /* Form */
 .form {
   font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
+  width: 100%;
   &__label {
     display: block;
     @include mixins.small-mobile;
