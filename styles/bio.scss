@@ -163,8 +163,9 @@
   }
   /*Comment avatar*/
   &__avatar {
-    margin: 1.25rem 1rem 0 0;
+    margin-right: 1rem;
   }
+
   &__avatar,
   &__avatar img {
     border-radius: 50%;
@@ -177,9 +178,23 @@
       height: 3rem;
     }
   }
+  /* Avatar besides form*/
+  &__avatar--form {
+    margin-top: 1.25rem;
+  }
 
   /* Comment text */
   &__message {
     flex: 1;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+  }
+  &__time {
+    font-weight: 400;
+    color: $primary-medium;
   }
 }
