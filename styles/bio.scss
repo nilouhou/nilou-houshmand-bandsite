@@ -6,24 +6,25 @@
 @use "./partials/global";
 
 /* Hero Section */
-.hero {
-  @include mixins.flex-row-y-center;
-  width: 100%;
+.hero--bio {
+  @extend .hero;
   height: 40vh;
   background: url("../assets/images/hero-bio.jpg"), rgba(50, 50, 50, 0.5);
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  color: $primary-light;
 
   @include mixins.tablet {
+    height: 70vh;
+  }
+  @include mixins.desktop {
     height: 80vh;
   }
 }
 
-/* Main Content*/
-.main-content {
+/* About Section */
+.about {
   padding-bottom: $mobile-gap-component;
   @include mixins.tablet {
     padding-bottom: $tablet-gap-component;

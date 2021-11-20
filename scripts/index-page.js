@@ -20,12 +20,16 @@ let comments = [
 
 const commentsBody = document.querySelector(".comments");
 
-for (let i = 0; i < comments.length; i++) {
-  let comment = comments[i];
-  let commentsItem = displayComment(comment);
-  commentsBody.appendChild(commentsItem);
+function createComments(comments) {
+  commentsBody.innerHTML = "";
+  for (let i = 0; i < comments.length; i++) {
+    let comment = comments[i];
+    let commentsItem = displayComment(comment);
+    commentsBody.appendChild(commentsItem);
+  }
 }
 
+createComments(comments);
 function displayComment(comment) {
   //Create comment row
   let commentsItem = document.createElement("div");
@@ -64,44 +68,20 @@ function displayComment(comment) {
   return commentsItem;
 }
 
-// // Function to Handle on submitting the form
-// const form = document.querySelector(".form");
-// const formHandler = (e) => {
-//   e.preventDefault();
+const form = document.querySelector(".form");
 
-//   let newComment = {
-//     fanName: e.target.name.value,
-//     timestamp: "2021/01/01",
-//     text: e.target.commentTextArea.value,
-//   };
+const formHandler = (e) => {
+  e.preventDefault();
 
-//   comments.push(newComment);
-//   console.log(comments);
-
-//   e.target.reset();
-//   displayComment(newComment);
-// };
-
-// form.addEventListener("submit", formHandler);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".form");
-
-  const formHandler = (e) => {
-    e.preventDefault();
-
-    let newComment = {
-      fanName: e.target.name.value,
-      timestamp: "2021/01/01",
-      text: e.target.commentTextArea.value,
-    };
-
-    comments.unshift(newComment);
-    console.log(comments);
-
-    e.target.reset();
-    let commentsItem = displayComment(newComment);
-    commentsBody.prepend(commentsItem);
+  let newComment = {
+    fanName: e.target.name.value,
+    timestamp: "2021/01/01",
+    text: e.target.commentTextArea.value,
   };
-  form.addEventListener("submit", formHandler);
-});
+
+  comments.unshift(newComment);
+
+  createComments(comments);
+  e.target.reset();
+};
+form.addEventListener("submit", formHandler);
