@@ -126,7 +126,7 @@ function displayShows(show) {
 }
 
 //Active state
-const rowsArray = document.querySelectorAll(".shows__rows");
+const rowsArray = document.querySelectorAll(".shows__row");
 
 rowsArray.forEach((row) => {
   row.addEventListener("click", () => row.classList.toggle("selected"));
