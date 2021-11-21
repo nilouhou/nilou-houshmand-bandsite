@@ -125,7 +125,7 @@ function displayShows(show) {
   return showsRow;
 }
 
-//Active state
+//Active state For the Shows information row
 const rowsArray = document.querySelectorAll(".shows__row");
 
 rowsArray.forEach((row) => {

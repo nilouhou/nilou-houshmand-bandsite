@@ -1,3 +1,4 @@
+// Arrays of comments
 let comments = [
   {
     fanName: "Connor Walton",
@@ -68,14 +69,35 @@ function displayComment(comment) {
   return commentsItem;
 }
 
+// Formatting the Date
+function dateFormatted(date) {
+  let dd = date.getDate();
+  let mm = date.getMonth() + 1;
+  let yyyy = date.getFullYear();
+
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+
+  date = mm + "/" + dd + "/" + yyyy;
+  return date;
+}
+
+// Form Handeling
 const form = document.querySelector(".form");
 
 const formHandler = (e) => {
   e.preventDefault();
 
+  let commentDate = dateFormatted(new Date());
+
   let newComment = {
     fanName: e.target.name.value,
-    timestamp: "2021/01/01",
+    timestamp: commentDate,
     text: e.target.commentTextArea.value,
   };
 
@@ -84,4 +106,5 @@ const formHandler = (e) => {
   createComments(comments);
   e.target.reset();
 };
+
 form.addEventListener("submit", formHandler);

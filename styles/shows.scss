@@ -18,6 +18,13 @@
   background-blend-mode: multiply;
   color: $primary-light;
 
+  @include mixins.desktop {
+    @include mixins.flex-row;
+    align-items: center;
+    min-height: 80vh;
+    justify-content: space-between;
+  }
+
   &__titles {
     width: 75%;
 
@@ -26,10 +33,12 @@
     }
     @include mixins.desktop {
       width: 40%;
+      h3 {
+        padding-top: 0;
+      }
     }
 
-    h1,
-    h3 {
+    h1 {
       padding-top: 0;
     }
   }
@@ -40,19 +49,12 @@
 
     @include mixins.tablet {
       width: 60%;
-      margin: 0;
     }
 
     @include mixins.desktop {
       width: 50%;
+      margin: 0;
     }
-  }
-
-  @include mixins.desktop {
-    @include mixins.flex-row;
-    align-items: center;
-    height: 80vh;
-    justify-content: space-between;
   }
 }
 
@@ -61,11 +63,7 @@
   margin-bottom: $mobile-gap;
   @include mixins.desktop {
     display: flex;
-    justify-content: space-between;
-
-    &__wrapper {
-      width: 70%;
-    }
+    justify-content: space-evenly;
   }
 
   &__row {
@@ -92,8 +90,11 @@
       @include mixins.tablet {
         display: flex;
         justify-content: space-between;
-        width: 75%;
+        width: 84%;
         border: none;
+      }
+      @include mixins.desktop {
+        width: 80%;
       }
     }
   }
