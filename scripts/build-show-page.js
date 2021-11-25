@@ -4,14 +4,16 @@ const BANDSITE_API_KEY = "113cb004-6433-4703-a473-71b16f421a08"; // Get an API k
 let url = `${BANDSITE_API_URL}/showdates?api_key=${BANDSITE_API_KEY}`;
 
 const showApi = axios.get(url);
-showApi.then((response) => {
-  const showList = response.data;
-  console.log(showList);
-  showList.forEach((show) => {
-    let showsRows = displayShows(show);
-    contentWrapper.appendChild(showsRows);
-  });
-});
+showApi
+  .then((response) => {
+    const showList = response.data;
+    console.log(showList);
+    showList.forEach((show) => {
+      let showsRows = displayShows(show);
+      contentWrapper.appendChild(showsRows);
+    });
+  })
+  .catch((error) => console.error(error));
 
 const showsBody = document.querySelector(".shows");
 
@@ -58,7 +60,10 @@ function displayShows(show) {
 
   let showsDate = document.createElement("div");
   showsDate.classList.add("shows__details");
-  showsDate.innerText = show.date;
+
+  showsDate.innerText = dateFormat(new Date(Number(show.date)))
+    .split(",")
+    .join(" ");
 
   let showsHeaderVenue = document.createElement("div");
   showsHeaderVenue.classList.add("shows__header");
@@ -100,3 +105,17 @@ const rowsArray = document.querySelectorAll(".shows__row");
 rowsArray.forEach((row) => {
   row.addEventListener("click", () => row.classList.toggle("selected"));
 });
+
+//Date formatter for Show page
+
+function dateFormat(date) {
+  const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  date = date.toLocaleDateString("en-US", options);
+  return date;
+}
