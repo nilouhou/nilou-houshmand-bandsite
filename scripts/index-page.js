@@ -1,7 +1,6 @@
 const BANDSITE_API_URL = "https://project-1-api.herokuapp.com";
 const BANDSITE_API_KEY = "113cb004-6433-4703-a473-71b16f421a08"; // Get an API key from https://project-1-api.herokuapp.com/register
 
-// Arrays of comments
 let url = `${BANDSITE_API_URL}/comments?api_key=${BANDSITE_API_KEY}`;
 
 function getCommentsApi() {

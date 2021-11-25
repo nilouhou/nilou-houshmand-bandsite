@@ -1,41 +1,17 @@
-let showsList = [
-  {
-    date: "Mon Sept 06 2021 ",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-    buttonText: "buy tciket",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-    buttonText: "buy ticket",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-    buttonText: "buy ticket",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    buttonText: "buy ticket",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-    buttonText: "buy ticket",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-    buttonText: "buy ticket",
-  },
-];
+const BANDSITE_API_URL = "https://project-1-api.herokuapp.com";
+const BANDSITE_API_KEY = "113cb004-6433-4703-a473-71b16f421a08"; // Get an API key from https://project-1-api.herokuapp.com/register
+
+let url = `${BANDSITE_API_URL}/showdates?api_key=${BANDSITE_API_KEY}`;
+
+const showApi = axios.get(url);
+showApi.then((response) => {
+  const showList = response.data;
+  console.log(showList);
+  showList.forEach((show) => {
+    let showsRows = displayShows(show);
+    contentWrapper.appendChild(showsRows);
+  });
+});
 
 const showsBody = document.querySelector(".shows");
 
@@ -72,12 +48,6 @@ showsRowTop.appendChild(ShowsHeaderLocationTop);
 contentWrapper.appendChild(showsRowTop);
 showsBody.appendChild(contentWrapper);
 
-for (let i = 0; i < showsList.length; i++) {
-  let show = showsList[i];
-  let showsRows = displayShows(show);
-  contentWrapper.appendChild(showsRows);
-}
-
 function displayShows(show) {
   let showsRow = document.createElement("div");
   showsRow.classList.add("shows__row");
@@ -96,7 +66,7 @@ function displayShows(show) {
 
   let showsVenue = document.createElement("div");
   showsVenue.classList.add("shows__details");
-  showsVenue.innerText = show.venue;
+  showsVenue.innerText = show.place;
 
   let ShowsHeaderLocation = document.createElement("div");
   ShowsHeaderLocation.classList.add("shows__header");
@@ -107,9 +77,8 @@ function displayShows(show) {
   showsLocation.innerText = show.location;
 
   let buyTicket = document.createElement("button");
-  let buttonText = document.createTextNode(show.buttonText);
   buyTicket.classList.add("primary-button");
-  buyTicket.appendChild(buttonText);
+  buyTicket.innerText = "Buy Ticket";
 
   //Adding our Elements to HTML
 
