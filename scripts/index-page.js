@@ -1,24 +1,30 @@
+const BANDSITE_API_URL = "https://project-1-api.herokuapp.com";
+const BANDSITE_API_KEY = "113cb004-6433-4703-a473-71b16f421a08"; // Get an API key from https://project-1-api.herokuapp.com/register
+
 // Arrays of comments
-let comments = [
-  {
-    fanName: "Connor Walton",
-    timestamp: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
+let url = `${BANDSITE_API_URL}/comments?api_key=${BANDSITE_API_KEY}`;
 
-  {
-    fanName: "Emilie Beach",
-    timestamp: "01/09/2021",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
+function getCommentsApi() {
+  const commentsApi = axios.get(url);
+  commentsApi
+    .then((response) => {
+      const comments = response.data;
 
-  {
-    fanName: "Miles Acosta",
-    timestamp: "12/20/2020",
-    text: "Lead EducatorI can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+      //sorting the Comments to show the latest top
+      comments.sort((a, b) => {
+        var c = new Date(a.timestamp);
+        var d = new Date(b.timestamp);
+        return d - c;
+      });
 
+      createComments(comments);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+getCommentsApi();
 const commentsBody = document.querySelector(".comments");
 
 function createComments(comments) {
@@ -30,7 +36,6 @@ function createComments(comments) {
   }
 }
 
-createComments(comments);
 function displayComment(comment) {
   //Create comment row
   let commentsItem = document.createElement("div");
@@ -47,17 +52,17 @@ function displayComment(comment) {
   //Create Pragraph for comment name
   const commentsName = document.createElement("p");
   commentsName.classList.add("comments__name");
-  commentsName.innerHTML = comment.fanName;
+  commentsName.innerHTML = comment.name;
 
   //Create Pragraph for comment post time
   const commentsTime = document.createElement("span");
   commentsTime.classList.add("comments__time");
-  commentsTime.innerText = comment.timestamp;
+  commentsTime.innerText = dateFormatted(new Date(comment.timestamp));
 
   //Create comment message
   const commentsComment = document.createElement("p");
   commentsComment.classList.add("comments__comment");
-  commentsComment.innerText = comment.text;
+  commentsComment.innerText = comment.comment;
 
   //Adding our Elements to HTML
   commentsItem.appendChild(commentsAvatar);
@@ -96,14 +101,21 @@ const formHandler = (e) => {
   let commentDate = dateFormatted(new Date());
 
   let newComment = {
-    fanName: e.target.name.value,
-    timestamp: commentDate,
-    text: e.target.commentTextArea.value,
+    name: e.target.name.value,
+    //timestamp: commentDate,
+    comment: e.target.commentTextArea.value,
   };
 
-  comments.unshift(newComment);
+  axios
+    .post(url, newComment)
+    .then((response) => {
+      getCommentsApi();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  //comments.unshift(newComment);
 
-  createComments(comments);
   e.target.reset();
 };
 
