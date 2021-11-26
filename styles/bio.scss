@@ -133,6 +133,7 @@
     flex-direction: column;
   }
   &__form-wrapper {
+    width: 100%;
     @include mixins.flex-row-x-center;
     @include mixins.tablet {
       width: 80%;

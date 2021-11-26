@@ -162,6 +162,7 @@ h3 {
   font-family: "AvenirNext LT Pro", Helvetica, sans-serif;
   width: 100%;
   &__label {
+    text-transform: uppercase;
     display: block;
     @include mixins.small-mobile;
     //margin-bottom: 4px;

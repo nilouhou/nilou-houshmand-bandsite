@@ -238,6 +238,7 @@ h3 {
   width: 100%;
 }
 .form__label {
+  text-transform: uppercase;
   display: block;
   font-size: 0.625rem;
   line-height: 1.25rem;
@@ -511,6 +512,7 @@ h3 {
   flex-direction: column;
 }
 .conversation__form-wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
