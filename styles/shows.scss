@@ -8,9 +8,10 @@
 /* Hero Section */
 .hero--shows {
   @extend .hero;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 70vh;
+  display: flex;
+
+  justify-content: center;
+  min-height: 22rem;
   background: url("../assets/images/hero-shows.jpg"), rgba(50, 50, 50, 0.5);
   background-size: cover;
   background-position: right center;
@@ -18,11 +19,17 @@
   background-blend-mode: multiply;
   color: $primary-light;
 
-  @include mixins.desktop {
-    @include mixins.flex-row;
-    align-items: center;
-    min-height: 80vh;
-    justify-content: space-between;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mixins.desktop {
+      @include mixins.flex-row;
+      align-items: center;
+      min-height: 32rem;
+      justify-content: space-between;
+    }
   }
 
   &__titles {

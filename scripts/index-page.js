@@ -4,8 +4,8 @@ const BANDSITE_API_KEY = "113cb004-6433-4703-a473-71b16f421a08"; // Get an API k
 let url = `${BANDSITE_API_URL}/comments?api_key=${BANDSITE_API_KEY}`;
 
 function getCommentsApi() {
-  const commentsApi = axios.get(url);
-  commentsApi
+  axios
+    .get(url)
     .then((response) => {
       const comments = response.data;
 
@@ -19,7 +19,7 @@ function getCommentsApi() {
       createComments(comments);
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
 }
 
@@ -55,7 +55,7 @@ function displayComment(comment) {
   //Create Pragraph for comment name
   const commentsName = document.createElement("p");
   commentsName.classList.add("comments__name");
-  commentsName.innerHTML = comment.name;
+  commentsName.innerText = comment.name;
 
   //Create Pragraph for comment post time
   const commentsTime = document.createElement("span");
@@ -115,7 +115,7 @@ const formHandler = (e) => {
       getCommentsApi();
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   //comments.unshift(newComment);
 

@@ -381,9 +381,9 @@ h3 {
 /* Bio Page Stylesheet */
 /* Hero Section */
 .hero--shows {
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  min-height: 22rem;
   background: url("../assets/images/hero-shows.jpg"), rgba(50, 50, 50, 0.5);
   background-size: cover;
   background-position: right center;
@@ -391,12 +391,17 @@ h3 {
   background-blend-mode: multiply;
   color: #ffffff;
 }
+.hero--shows__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 @media (min-width: 1280px) {
-  .hero--shows {
+  .hero--shows__wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-height: 80vh;
+    min-height: 32rem;
     justify-content: space-between;
   }
 }
