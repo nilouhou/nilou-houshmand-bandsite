@@ -24,10 +24,14 @@ function getCommentsApi() {
 }
 
 getCommentsApi();
-const commentsBody = document.querySelector(".comments");
 
 function createComments(comments) {
-  commentsBody.innerHTML = "";
+  const commentsBody = document.querySelector("#comments");
+
+  while (commentsBody.firstChild) {
+    commentsBody.removeChild(commentsBody.firstChild);
+  }
+
   for (let i = 0; i < comments.length; i++) {
     let comment = comments[i];
     let commentsItem = displayComment(comment);

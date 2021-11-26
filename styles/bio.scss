@@ -49,6 +49,10 @@
     margin: 0;
   }
 
+  &__author {
+    margin-top: $mobile-gap;
+  }
+
   &__quote {
     @include mixins.tablet {
       @include mixins.sub-header-tablet;

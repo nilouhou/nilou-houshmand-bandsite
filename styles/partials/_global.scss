@@ -2,9 +2,9 @@
  Reset, Typography, Gap, Header, Navigation, Form, Button, Hero, Footer
  =================================================================== **/
 
-@use "variables" as *;
-@use "mixins";
-@use "typography";
+@use "./variables" as *;
+@use "./mixins";
+@use "./typography";
 
 /* Reset */
 *,
