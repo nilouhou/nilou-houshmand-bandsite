@@ -52,10 +52,11 @@
 
   &__iframe {
     width: 100%;
-    margin-bottom: $mobile-gap;
+    margin-bottom: 1.5rem;
 
     @include mixins.tablet {
       width: 60%;
+      margin-bottom: 3rem;
     }
 
     @include mixins.desktop {
