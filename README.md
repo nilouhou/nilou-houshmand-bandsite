@@ -4,13 +4,6 @@
 It is a website for the music band
 
 
-
-## Demo
-
-
-
-
-
 ## How to run
 ### `npm start`
 
